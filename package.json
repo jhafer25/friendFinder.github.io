@@ -1,0 +1,24 @@
+{
+  "name": "friendfinder.github.io",
+  "version": "1.0.0",
+  "description": "This is similar to a dating app but to find friends with similar interests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhafer25/friendFinder.github.io.git"
+  },
+  "author": "jhafer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhafer25/friendFinder.github.io/issues"
+  },
+  "homepage": "https://github.com/jhafer25/friendFinder.github.io#readme",
+  "dependencies": {
+    "express": "latest",
+    "body-parser": "latest",
+    "path": "latest"
+  }
+}

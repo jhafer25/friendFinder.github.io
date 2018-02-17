@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Friend Finder App</title>
+        <meta charset="utf-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <meta name="description" content="Describes the Friend Finder App"></meta>
+        <meta name="author" content="James Hafer"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="alert-error" class="alert alert-danger hidden-friend-form" role="alert">
+            <button id="close-alert-error" type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <strong>Alert!&#32;</strong><span id="alert-error-message"></span>
+        </div>
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="./home.html">Friend Finder</a>
+            <div class="collapse navbar-collapse float-right" id="navbarNav">
+                <ul class="navbar-nav pull-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Take Survey <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/friends" target="_blank">Friends API</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/jhafer25/friendFinder.github.io" target="_blank">GitHub Repo</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="marketing-container">
+            <div class="marketing container form">
+                <i id="fa-loader-case" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2 class="text-center">Let Us Help Find You a Friend!</h2>
+                        <div>
+                            <div class="form-group">
+                                <label for="name">Name</label><span class="required"> <b>*</b></span>
+                                <input id="name" class="form-control validateForm" maxlength="80" type="text" placeholder="Your Name" autofocus="true" />
+                            </div>
+                            <div class="form-group">
+                                <label for="question1">I consider myself to be an active person</label><span class="required"> <b>*</b></span>
+                                <select id="question1" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question2">I believe I am generally an organized person</label><span class="required"> <b>*</b></span>
+                                <select id="question2" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question3">I like to travel</label><span class="required"> <b>*</b></span>
+                                <select id="question3" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question4">I put work first</label><span class="required"> <b>*</b></span>
+                                <select id="question4" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question5">I like to explore new things</label><span class="required"> <b>*</b></span>
+                                <select id="question5" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question6">I like to listen to all views regardless if the conlict with mine</label><span class="required"> <b>*</b></span>
+                                <select id="question6" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question7">I thrive in a big group of people</label><span class="required"> <b>*</b></span>
+                                <select id="question7" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question8">I like to stay inside and play video games</label><span class="required"> <b>*</b></span>
+                                <select id="question8" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question9">I like to always keep learning</label><span class="required"> <b>*</b></span>
+                                <select id="question9" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question10">I like summer over winter</label><span class="required"> <b>*</b></span>
+                                <select id="question10" class="validateForm">
+                                    <option value="" disabled selected>-- None --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="uploadedImage">Upload Image</label><span class="required"> <b>*</b></span>
+                                <input type="file" id="uploadedImage" class="validateForm"/>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" id="submitFriendForm">Submit</button><span class="required legend-required-container"> <b>*</b></span><span class="legend-required"> Required Fields</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p class="pull-right">
+                <a id="back-to-top" href="#">Back to top</a>
+            </p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./survey.js"></script>
+    </body>
+</html>
