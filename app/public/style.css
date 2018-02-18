@@ -103,3 +103,7 @@ button#close-alert-error {
 button#close-alert-error:hover {
 	color: #c5dbe8 !important;
 }
+.modal-title{
+    color: #00476d;
+    text-transform: uppercase;
+}
