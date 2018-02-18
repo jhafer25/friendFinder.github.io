@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/jhafer25/friendFinder.github.io#readme",
   "dependencies": {
-    "express": "latest",
-    "body-parser": "latest",
-    "path": "latest"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
   }
 }

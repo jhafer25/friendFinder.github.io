@@ -11,8 +11,9 @@ $(document).ready(function() {
 	const validateForm = function(){
         let isValid = false;
         $('.validateForm').each(function() {
-            if ($(this).val() === ''){
-                isValid = false;
+            if ($(this).val() !== ''){
+            	console.log($(this).val());
+                isValid = true;
             }
         });
         return isValid;
@@ -45,9 +46,9 @@ $(document).ready(function() {
 				'/api/friends', 
 				newFriendInput
 			).done(function(data) {
-				$('#userMatch').html(data.matchName);
-		    	$("#userMatchImage").attr("src", data.matchImage);
-				$('#modal1').modal('open');
+				$('#newFriendMatch').html(data.name);
+		    	$("#newFriendImage").attr("src", data.photo);
+				$('#modal-friend-match').modal('open');
 			});
 			//CLEAR FORM
 			$('input#name').val('');
