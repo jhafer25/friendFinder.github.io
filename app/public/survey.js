@@ -11,7 +11,7 @@ $(document).ready(function() {
 	const validateForm = function(){
         let isValid = true;
         $('.validateForm').each(function() {
-            if ($(this).val() !== ''){
+            if ($(this).val() === ''){
                 isValid = false;
             }
         });
