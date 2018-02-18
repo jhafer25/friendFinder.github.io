@@ -3,7 +3,6 @@ $(document).ready(function() {
         $('span#alert-error-message').text(msg);
         $('div#alert-error').show();
     }
-    
     function hideAlert() {
         $('div#alert-error').hide();
     }
