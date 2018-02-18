@@ -48,7 +48,7 @@ $(document).ready(function() {
 			).done(function(data) {
 				$('#newFriendMatch').html(data.name);
 		    	$("#newFriendImage").attr("src", data.photo);
-				$('#modal-friend-match').modal('open');
+				$('#modal-friend-match').modal('show');
 			});
 			//CLEAR FORM
 			$('input#name').val('');
