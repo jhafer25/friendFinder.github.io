@@ -3,16 +3,16 @@ $(document).ready(function() {
         $('span#alert-error-message').text(msg);
         $('div#alert-error').show();
     }
+
     function hideAlert() {
         $('div#alert-error').hide();
     }
 
 	const validateForm = function(){
-        let isValid = false;
+        let isValid = true;
         $('.validateForm').each(function() {
             if ($(this).val() !== ''){
-            	console.log($(this).val());
-                isValid = true;
+                isValid = false;
             }
         });
         return isValid;
